@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap");
+
+body{
+  --font-family: Outfit;
+  font-family: var(--font-family);
+  --nav-txt-color: #f1f3f3;
+}
+#light{
+  --nav-bg-color: #003836a9;
+  --bg-color:#edecec;
+  --card-color: #37d3cb42;
+  --text-color:#0b0c10;
+  --btn-color: #0b0c10;
+}
+#dark{
+  --nav-bg-color: #7777773e;
+  --bg-color:#1a1a1a;
+  --card-color: #86858529;
+  --text-color:#FFFBFB;
+  --btn-color: #66fcf1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input{
+  border: none;
+    outline: none;
+    background: none;
+    color: var(--text-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button{
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 450px) {
+  #dark {
+    --bg-color:#002729;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  #light{
+  --card-color: #66fcf1;
   }
 }

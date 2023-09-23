@@ -1,0 +1,63 @@
+#dark{
+  --color1: #66fcf1;
+    --color2: #dcfefb;
+    --color3: #fd6dea;
+    --color4: #6db9fc;
+}
+#light{
+  --color1: #66fcf1;
+    --color2: #00f9e8;
+    --color3: #00f9e8;
+    --color4: #00ffee;
+}
+.Blob{
+    background-color: aliceblue;
+    height: 26em;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    translate: -50% -50%;
+    animation: gradientAnimation 15s linear infinite, rotate 9s infinite;
+    transition: color 1s;
+}
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: blur(200px); 
+    z-index: 1;
+  }
+
+
+@keyframes rotate{
+    from{
+        rotate: 0deg;
+    }
+    25%{
+        scale: 1 1.6;
+    }
+    50%{
+        scale: 1;
+    }
+    75%{
+        scale: 1 1.6;
+    }
+    to{
+        rotate: 360deg;
+    }
+}
+@keyframes gradientAnimation {
+    0% {
+      background: linear-gradient(90deg, var(--color1), var(--color2));
+    }
+    
+    50% {
+      background: linear-gradient(90deg, var(--color3), var(--color4));
+    }
+   
+    100% {
+      background: linear-gradient(90deg, var(--color1), var(--color2));
+    }
+}

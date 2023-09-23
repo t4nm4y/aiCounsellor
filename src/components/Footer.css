@@ -1,0 +1,16 @@
+.footer{
+    color: var(--text-color);
+    font-weight: bolder;
+    font-size: 1em;
+    width: 100vw;
+    height: 5em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+  }
+.footer a{
+  color: var(--text-color);
+  text-decoration: underline;
+}

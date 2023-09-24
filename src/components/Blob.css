@@ -1,17 +1,10 @@
 #dark{
-  --color1: #66fcf1;
-    --color2: #dcfefb;
-    --color3: #fd6dea;
-    --color4: #6db9fc;
-}
-#light{
-  --color1: #66fcf1;
-    --color2: #00f9e8;
-    --color3: #00f9e8;
-    --color4: #00ffee;
+  --color1: #002aff91;
+    --color2: #89a2fdb2;
+    --color3: #cb6dfda5;
+    --color4: #cf88fb8a;
 }
 .Blob{
-    background-color: aliceblue;
     height: 26em;
     aspect-ratio: 1;
     position: absolute;

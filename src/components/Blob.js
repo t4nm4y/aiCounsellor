@@ -47,7 +47,7 @@ const Blob = () => {
 
   const position = useSpring({
     left: `${mousePosition.x}px`,
-    top: `${Math.min(mousePosition.y + window.scrollY, parseFloat(maxTop)-250)}px`,
+    top: `${Math.min(mousePosition.y + window.scrollY, parseFloat(maxTop)-260)}px`,
     config: { duration: 300 },
   });
   return (

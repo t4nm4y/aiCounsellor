@@ -6,19 +6,12 @@ body{
   font-family: var(--font-family);
   --nav-txt-color: #f1f3f3;
 }
-#light{
-  --nav-bg-color: #003836a9;
-  --bg-color:#edecec;
-  --card-color: #37d3cb42;
-  --text-color:#0b0c10;
-  --btn-color: #0b0c10;
-}
 #dark{
   --nav-bg-color: #7777773e;
   --bg-color:#1a1a1a;
   --card-color: #86858529;
   --text-color:#FFFBFB;
-  --btn-color: #66fcf1;
+  --btn-color: #f2c7fe;
 }
 
 input{
@@ -37,9 +30,9 @@ button{
 
 @media screen and (max-width: 450px) {
   #dark {
-    --bg-color:#002729;
+    --bg-color:#001629;
   }
   #light{
-  --card-color: #66fcf1;
+  --card-color: #66cffc;
   }
 }

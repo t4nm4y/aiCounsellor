@@ -23,7 +23,7 @@ const Blob = () => {
   };
   
   const handleScroll = () => {
-    const cardwrap = document.querySelector('.cardWrap');
+    const cardwrap = document.querySelector('.homeWrap');
     // Calculate the maximum top position based on the cardwrap element's height
     if (cardwrap) {
       const cardwrapHeight = cardwrap.clientHeight;
@@ -47,7 +47,7 @@ const Blob = () => {
 
   const position = useSpring({
     left: `${mousePosition.x}px`,
-    top: `${Math.min(mousePosition.y + window.scrollY, parseFloat(maxTop)-260)}px`,
+    top: `${Math.min(mousePosition.y + window.scrollY, parseFloat(maxTop)-250)}px`,
     config: { duration: 300 },
   });
   return (

@@ -1,0 +1,15 @@
+.ChatBox{
+    display: flex;
+    background-color: var(--human-color);
+    color: aliceblue;
+    border-radius: 16px;
+    padding: 1em;
+    font-size: 1.1em;
+    align-self: start;
+    margin: 0.5em;
+}
+.isAi{
+    background-color: var(--ai-color);
+    width: 80vw;
+    max-width: 90%;
+}

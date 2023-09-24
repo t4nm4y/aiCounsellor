@@ -1,13 +1,14 @@
 import React from 'react'
 import './Navbar.css';
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = ({ toggleTheme }) => {
-
+const Navbar = () => {
+  const Navigate = useNavigate();
   return (
     <div className='navbar'>
       <div className='navInnerWrap'>
-        <span className='navHeading'> AI Counsellor!</span>
-        <button className='nav_btn hover-underline-animation'>All Streams</button>
+        <button className='navHeading' onClick={()=>Navigate('/')}> AI Counsellor!</button>
+        <button className='nav_btn hover-underline-animation' onClick={()=>Navigate('/streams')}>All Streams</button>
       </div>
     </div>
   )

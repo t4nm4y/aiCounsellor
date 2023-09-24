@@ -26,6 +26,7 @@
   justify-content: space-between;
 }
 .navHeading{
+  color: var(--txt-color);
   font-size: 2em;
   font-weight: bolder;
 }

@@ -3,7 +3,7 @@ An interactive web app that will make AI-based counselling accessible to every c
 It will handhold the student assess his capabilities and subsequently help him in deciding on a career path.
 
 ## Tech-Stack used: 
-React.js, python
+React.js, AI, Open-AI API, HTML, CSS, JavaScript
 
 ## Screenshots:
 ![Screenshot (76)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/103dcddf-21c9-4a31-bbe3-5ed423fc0e95)

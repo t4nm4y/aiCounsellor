@@ -4,6 +4,12 @@ It will handhold the student assess his capabilities and subsequently help him i
 
 ## Tech-Stack used: 
 React.js, python
+
+## Screen Shots:
+![Screenshot (76)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/103dcddf-21c9-4a31-bbe3-5ed423fc0e95)
+
+![Screenshot (78)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/cf15d2d0-b8e1-4282-9ad5-1ba5ee748e90)
+
 ## Available Scripts to run it on your machine
 
 In the project directory, you can run:

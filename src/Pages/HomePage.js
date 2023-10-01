@@ -6,26 +6,25 @@ import Footer from '../components/Footer';
 import ChatBox from '../components/ChatBox';
 import { MdSend } from "react-icons/md";
 import { useState, useEffect } from 'react';
+import { PulseLoader } from 'react-spinners'
 
 
 const HomePage = () => {
   const [start, setStart] = useState(false);
+  const [isAItyping, setAItyping] = useState(true);
   const [messages, setMessages] = useState([
     {
-      message: "Act as a career counsellor expert in counselling students in 10th class, helping them choose diploma or stream for their 11, 12 CBSE board class or an ITI course or go for the preparation of any government Jobs. So ask me as many questions to gain all the relevant information to determine what stream and career options would be most suited for me. In the first reply tell me the total no. of questions approximately that I have to answer, then only ask one question(without mentioning question no.), once I reply to that, ask the second question and so on. Once the chat is reached to its conclusion prompt me to ask further questions if I like to.",
+      message: "You are a career counsellor expert in counselling students in 10th class, helping them choose diploma or stream for their 11, 12 CBSE board class or an ITI course or go for the preparation of any government Jobs. So ask me as many questions to gain all the relevant information to determine what stream and career options would be most suited for me. In the first reply tell me the total no. of questions approximately that I have to answer, then only ask one question, once I reply to that, ask the second question and so on. Start the conversation with a greeting. In the end of the whole conversation promt me to ask any further query if I like to.",
       sentTime: "just now",
-      sender: "user"
+      sender: "user",
+      display: false,
     }
   ]);
   const [userInput, setUserInput] = useState("");
   if (!start) {
     console.log("start");
     setStart(true);
-    // messageToAi(messages);
-  }
-  const systemMessage = {
-    role: "system",
-    content: "Act as a career counsellor expert in counselling students in 10th class, helping them choose diploma or stream for their 11, 12 CBSE board class or an ITI course or go for the preparation of any government Jobs. So ask me as many questions to gain all the relevant information to determine what stream and career options would be most suited for me. In the first reply tell me the total no. of questions approximately that I have to answer, then only ask one question(without mentioning question no.), once I reply to that, ask the second question and so on. Don't forget in the end to prompt me to ask further questions if I like to.",
+    messageToAi(messages);
   }
 
   useEffect(() => {
@@ -34,19 +33,20 @@ const HomePage = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (userInput.trim().length === 0) {
-      console.log('empty input');
+    if (isAItyping || userInput.trim().length === 0) {
+      console.log('waiting for ai or empty input');
       return;
     }
     const newMessage = {
       message: userInput,
       direction: 'outgoing',
-      sender: "user"
+      sender: "user",
     };
 
     const newMessages = [...messages, newMessage];
     setMessages(newMessages);
     setUserInput('');
+    setAItyping(true);
     await messageToAi(newMessages);
   }
   async function messageToAi(chatMessages) {
@@ -57,7 +57,7 @@ const HomePage = () => {
       } else {
         role = "user";
       }
-      return { role: role, content: messageObject.message };
+      return { role: role, content: messageObject.message};
     });
 
     const apiRequestBody = {
@@ -78,14 +78,15 @@ const HomePage = () => {
       }).then((data) => {
         return data.json();
       }).then((data) => {
-        console.log(data);
-        console.log('before', messages);
+        // console.log(data);
+        // console.log('before', messages);
         setMessages([...chatMessages, {
           message: data.choices[0].message.content,
           sender: "ChatGPT"
         }]);
-        console.log('after', messages);
+        // console.log('after', messages);
       });
+    setAItyping(false);
   }
 
   return (
@@ -97,9 +98,17 @@ const HomePage = () => {
       <div className="homeWrap">
         <div className="chatWrap" id="chatWrap">
           {messages.map((message, index) => (
-            <ChatBox key={index} content={message.message} isAi={message.sender === "ChatGPT"} />
+            (message.display === undefined || message.display) ?
+              <ChatBox key={index} content={message.message} isAi={message.sender === "ChatGPT"} />
+              : null
           ))}
         </div>
+        <PulseLoader
+          loading={isAItyping}
+          color={"#ACBBBF"}
+          style={{marginBottom: '1em'}}
+          size={9}
+        />
         <form className="inputWrap" onSubmit={handleSubmit}>
           <input type="text"
             placeholder="Enter msg..."

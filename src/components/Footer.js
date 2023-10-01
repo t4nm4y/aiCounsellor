@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='footer'>
       <h3>
-        Crafted with ❤️ by Brue-Rock Team!
+      Crafted with ❤️ by &nbsp;<a href="https://github.com/t4nm4y" target="_blank">Tanmay</a>
       </h3>
     </div>
   )

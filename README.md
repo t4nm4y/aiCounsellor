@@ -6,9 +6,14 @@ It will handhold the student assess his capabilities and subsequently help him i
 React.js, AI, Open-AI API, HTML, CSS, JavaScript
 
 ## Screenshots:
-![Screenshot (76)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/103dcddf-21c9-4a31-bbe3-5ed423fc0e95)
+![Screenshot (81)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/befa6880-bb5f-4296-9427-ee305243e48c)
 
-![Screenshot (78)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/cf15d2d0-b8e1-4282-9ad5-1ba5ee748e90)
+![Screenshot (84)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/ad9f7269-0125-4be5-b94c-b1739b7d170a)
+
+![Screenshot (86)](https://github.com/t4nm4y/aiCounsellor/assets/88146479/7b97032d-0535-4494-9286-1d1b4eb06ebd)
+
+![Screenshot_20230925_111534](https://github.com/t4nm4y/aiCounsellor/assets/88146479/32d1ebc1-0253-481e-b603-459fcc630285)
+
 
 ## Available Scripts to run it on your machine
 
